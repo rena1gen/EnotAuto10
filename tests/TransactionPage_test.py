@@ -4,6 +4,7 @@ import configs.authData
 from pages.AuthPage import AuthPage
 from pages.TransactionPage import TransactionPage
 from pages.FilterModule import FilterModule
+from Locartors.TransactioPageLocators import TransactionPageLocators as Locator
 
 
 def test_filter_transaction(browser):
@@ -37,4 +38,18 @@ def test_create_status_check(browser):
     block_title = tp.get_block_status_text()
     assert title == block_title
     print("Статусы совпадают")
+
+
+def test_create_status(browser):
+    fp = FilterModule(browser)
+    tp = TransactionPage(browser, "https://cabinet.enot.io/transactions")
+    a = AuthPage(browser,  "https://cabinet.enot.io/transactions")
+    a.open()
+    time.sleep(3)
+    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
+    time.sleep(3)
+    tp.open()
+    time.sleep(2)
+    content = tp.get_text(Locator.CREATE_STATUS)
+    print(content)
 

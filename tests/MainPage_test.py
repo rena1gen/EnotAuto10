@@ -14,7 +14,7 @@ def test_click_to_analys_btn(browser):
     mp.click_to_analytics_btn()
     time.sleep(2)
     title = mp.get_page_title()
-    assert title == "Аналитик"
+    assert title == "Аналитика"
 
 
 def test_click_to_active_kassa(browser):
@@ -136,6 +136,10 @@ def test_common_balance_correspondence_and_balance_button(browser):
     time.sleep(3)
     mp.get_screenshot("balance_screen")
     print("Значения балансов соответствует")
+
+
+
+    
 
 
 

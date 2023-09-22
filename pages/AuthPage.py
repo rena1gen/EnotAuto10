@@ -1,7 +1,4 @@
-import time
-
 from pages.BasePage import BasePage
-from selenium.webdriver.common.by import By
 from Locartors.AuthPageLocators import AuthPageLocators as Locator
 
 
