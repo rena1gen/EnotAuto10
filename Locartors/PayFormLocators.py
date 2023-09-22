@@ -26,7 +26,7 @@ class PayFormLocators:
     CARD_NUM_INPUT = (By.ID, "cardNumber")
     CARD_EXP_INPUT = (By.ID, "cardExpire")
     CARD_CVV_INPUT = (By.ID, 'cardCvv')
-    PAY_BTN = (By.XPATH, '//*[@id="root"]/div/div/div[2]/div/div[2]/div[1]/div[2]/form/button')
+    PAY_BTN = (By.TAG_NAME, 'button')
 
     #PERFECT MONEY
 

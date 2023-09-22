@@ -6,7 +6,7 @@ from pages.CreateLinkPage import CreatePayFormPage
 from pages.PayformPage import PayformPage
 
 
-def test_paycard_test(browser):
+def test_pay_by_card_test(browser):
     p = PayformPage(browser, configs.payform_link.pay_link)
     p.open()
     time.sleep(3)
