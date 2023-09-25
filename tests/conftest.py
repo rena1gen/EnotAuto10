@@ -1,6 +1,9 @@
 import selenium
 from selenium.webdriver import Chrome
 import pytest
+import configs.authData
+from pages.AuthPage import AuthPage
+import time
 
 
 @pytest.fixture()
@@ -9,3 +12,13 @@ def browser():
     driver.maximize_window()
     yield driver
     driver.quit()
+
+
+
+@pytest.fixture
+def auth_process(browser):
+    a = AuthPage(browser, "https://cabinet.enot.io/login")
+    a.open()
+    time.sleep(2)
+    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
+    time.sleep(2)

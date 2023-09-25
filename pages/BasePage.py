@@ -32,6 +32,9 @@ class BasePage:
     def get_text(self, element):
         return element.text
 
+    def elements_arent_visible(self, locator):
+        return WebDriverWait(self.driver, 5).until(EC.invisibility_of_element_located(locator))
+
 
     # def get_auth(self):
     #

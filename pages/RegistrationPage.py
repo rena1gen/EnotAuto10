@@ -21,9 +21,20 @@ class RegistrationPage(BasePage):
 
 
     def get_already_exist_text(self):
+        time.sleep(2)
         return self.element_is_visible(Locators.ALREADY_EXIST_MODAL).text
+
+
+    def get_email_incorrect_format_msg(self):
+        return self.element_is_visible(Locators.EMAIL_INCORRECT_FORMAT_MSG).text
 
     def get_accept_email_text(self):
         return self.element_is_visible(Locators.ACCEPT_EMAIL_TEXT).text
+
+
+    def go_to_login_page(self):
+        self.element_is_visible(Locators.LOGIN_BTN).click()
+
+
 
 

@@ -1,3 +1,5 @@
+import time
+
 from pages.BasePage import BasePage
 from Locartors.AuthPageLocators import AuthPageLocators as Locator
 
@@ -12,6 +14,7 @@ class AuthPage(BasePage):
     def fill_inputs_and_login(self, email, password):
 
         self.element_is_visible(Locator.EMAIL_INPUT).send_keys(email)
+        time.sleep(2)
         self.element_is_visible(Locator.PASSWORD_INPUT).send_keys(password)
         self.element_is_visible(Locator.AUTH_BUTTON).click()
 

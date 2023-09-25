@@ -12,4 +12,6 @@ class RegistrationPageLocators:
 
     REG_BTN = (By.CSS_SELECTOR, '[type="submit"]')
 
+    LOGIN_BTN = (By.CLASS_NAME, '_link_181sc_61')
 
+    EMAIL_INCORRECT_FORMAT_MSG = (By.CLASS_NAME,  '_error_qz7jq_1')

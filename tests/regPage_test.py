@@ -26,6 +26,28 @@ def test_new_user_registration(browser):
     assert page_title == "Подтвердите email"
     print("Тест кейс пройден")
 
+def test_go_login_page(browser):
+    reg = RegistrationPage(browser, 'https://cabinet.enot.io/registration')
+    reg.open()
+    time.sleep(2)
+    reg.go_to_login_page()
+    time.sleep(2)
+    title = reg.get_page_title()
+
+    assert title == "Авторизация"
+
+def test_incorrect_email_format(browser):
+    reg = RegistrationPage(browser, 'https://cabinet.enot.io/registration')
+    reg.open()
+    time.sleep(2)
+    reg.smoke_test_reg_process("bimbimbambam", "P6ezajjn21!!!", "P6ezajjn21!!!")
+    msg = reg.get_email_incorrect_format_msg()
+    assert msg == "Неверный формат почты"
+    print("Тест кейс пройден")
+
+
+
+
 
 
 
