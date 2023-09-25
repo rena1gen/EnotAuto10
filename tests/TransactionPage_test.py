@@ -3,53 +3,32 @@ import time
 import configs.authData
 from pages.AuthPage import AuthPage
 from pages.TransactionPage import TransactionPage
-from pages.FilterModule import FilterModule
-from Locartors.TransactioPageLocators import TransactionPageLocators as Locator
 
 
-def test_filter_transaction(browser):
+
+def test_search_input(browser, auth_process):
     tp = TransactionPage(browser, "https://cabinet.enot.io/transactions")
-    a = AuthPage(browser, "https://cabinet.enot.io/transactions")
-    f = FilterModule(browser)
-    a.open()
-    time.sleep(3)
-    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
-    time.sleep(3)
     tp.open()
-    time.sleep(3)
-    f.click_to_create_status()
-    f.click_to_paid_status()
-    f.click_to_error_status()
-    f.click_to_expired_status()
+    tp.fill_search_input_and_find("122")
 
-def test_create_status_check(browser):
-    fp = FilterModule(browser)
+
+def test_click_to_transaction_block(browser, auth_process):
     tp = TransactionPage(browser, "https://cabinet.enot.io/transactions")
-    a = AuthPage(browser,  "https://cabinet.enot.io/transactions")
-    a.open()
-    time.sleep(4)
-    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
-    time.sleep(4)
     tp.open()
-    time.sleep(4)
-    fp.click_to_create_status()
-    time.sleep(1)
-    title = fp.get_f_create_status_text()
-    block_title = tp.get_block_status_text()
-    assert title == block_title
-    print("Статусы совпадают")
+    tp.click_to_transaction_block()
+
+    trans_block_title = tp.transaction_block_title()
+    transaction_title = tp.transaction_title()
+
+    assert trans_block_title == transaction_title
+    print("TEST CASE IS PASSED")
 
 
-def test_create_status(browser):
-    fp = FilterModule(browser)
+def test_click_to_reps_code(browser, auth_process):
     tp = TransactionPage(browser, "https://cabinet.enot.io/transactions")
-    a = AuthPage(browser,  "https://cabinet.enot.io/transactions")
-    a.open()
-    time.sleep(3)
-    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
-    time.sleep(3)
     tp.open()
-    time.sleep(2)
-    content = tp.get_text(Locator.CREATE_STATUS)
-    print(content)
+    tp.click_to_transaction_block()
+    tp.click_to_resp_code()
+    title = tp.get_page_title()
+    print(title)
 

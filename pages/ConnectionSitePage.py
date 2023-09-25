@@ -13,5 +13,6 @@ class SiteConnectionPage(BasePage):
 
         self.element_is_visible(Locators.SITE_NAME_INPUT).send_keys(sitename)
         self.element_is_visible(Locators.SITE_ADRESS_INPUT).send_keys(domain_name)
+        self.element_is_visible(Locators.SITE_CONNECT_CHECKBOX).click()
         self.element_is_visible(Locators.SITE_DESC_INPUT).send_keys(desc)
         self.element_is_visible(Locators.SITE_CONNECTION_BTN).click()
