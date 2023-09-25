@@ -1,0 +1,1 @@
+pay_link = "https://pay.enot.io/2399ca04-1b7f-424c-8a1e-2f3c05f6cb7c?locale=ru"
