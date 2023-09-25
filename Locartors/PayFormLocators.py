@@ -3,6 +3,8 @@ class PayFormLocators:
 
 
 
+
+    #ПРОЦЕСС ОЦЕНКИ ПЕЙФОРМЫ
     RATE_BTN = (By.CLASS_NAME, '_buttonWrapper_12jlg_130')
     RATE_TITLE = (By.CLASS_NAME, '_title_1c25v_143')
     RATE_STARS = (By.CLASS_NAME, 'css-ykqdxu')
@@ -13,7 +15,6 @@ class PayFormLocators:
 
     RATE_COMMENT = (By.CSS_SELECTOR, '[role="button"]')
 
-    RATE_STARS_ARR = []
 
     SWITCH_LANG_BTN = (By.XPATH, '//*[@id="root"]/div/div/footer/div/div/div/div/button')
     ENG_BTN = (By.CLASS_NAME, 'dropdown__item')
@@ -26,7 +27,7 @@ class PayFormLocators:
     CARD_NUM_INPUT = (By.ID, "cardNumber")
     CARD_EXP_INPUT = (By.ID, "cardExpire")
     CARD_CVV_INPUT = (By.ID, 'cardCvv')
-    PAY_BTN = (By.TAG_NAME, 'button')
+    PAY_BTN = (By.XPATH, '//*[@id="root"]/div/div/div[2]/div/div[3]/div[1]/div[2]/div[1]/button')
 
     #PERFECT MONEY
 

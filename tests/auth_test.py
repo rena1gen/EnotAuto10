@@ -1,5 +1,6 @@
 import time
 
+import configs.authData
 from pages.AuthPage import AuthPage
 
 
@@ -16,7 +17,7 @@ def test_smoke_test_auth(browser):
     a = AuthPage(browser, "https://cabinet.enot.io")
     a.open()
     time.sleep(3)
-    a.fill_inputs_and_login("vmbesh-test@mail.ru", "Easy777!")
+    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
     time.sleep(3)
     title = a.get_page_title()
     assert title == "Главная"
@@ -25,7 +26,7 @@ def test_negative_auth(browser):
     a = AuthPage(browser, "https://cabinet.enot.io")
     a.open()
     time.sleep(3)
-    a.fill_inputs_and_login("vmbesh-test@mail.ru", "Eas777!")
+    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
     time.sleep(3)
     assert a.get_error_auth_text() == "Неверный логин или пароль"
 
@@ -33,7 +34,7 @@ def test_negative_email(browser):
     a = AuthPage(browser, "https://cabinet.enot.io")
     a.open()
     time.sleep(3)
-    a.fill_inputs_and_login("vmbesh-testail.ru", "Eas777!")
+    a.fill_inputs_and_login(configs.authData.email, configs.authData.password)
     time.sleep(3)
     assert a.get_email_format_error() == "Неверный формат почты"
 

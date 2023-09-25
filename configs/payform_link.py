@@ -1,1 +1,1 @@
-pay_link = "https://pay.enot.io/2399ca04-1b7f-424c-8a1e-2f3c05f6cb7c?locale=ru"
+pay_link = "https://pay.enot.io/c8eaec9e-905f-4c42-8221-e7ca72968ce2/card?locale=ru"
